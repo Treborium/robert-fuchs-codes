@@ -54,7 +54,7 @@ function App() {
             />
           </Flex>
         </Flex>
-        <Flex overflow='hidden'>
+        <Flex overflow='hidden' flexDirection='row-reverse' flexShrink={2}>
           <Image src={ProfilePicture} alt='Robert Fuchs with his dog' objectFit='contain' fit='fill'/>
         </Flex>
       </Flex>

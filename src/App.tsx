@@ -1,7 +1,8 @@
-import { ChakraProvider, Image, Flex, Text, Icon, IconButton, Link, Divider } from '@chakra-ui/react';
+import { ChakraProvider, Image, Flex, Text, Icon, IconButton, Link, Divider, Avatar } from '@chakra-ui/react';
 import ProfilePictureSmall from './resources/images/robert-and-tinka-small.jpg';
 import ProfilePictureMedium from './resources/images/robert-and-tinka-medium.jpg';
 import ProfilePictureLarge from './resources/images/robert-and-tinka-large.jpg';
+import AvatarImage from './resources/images/avatar.svg';
 import { Linkedin, GitHub, Mail } from 'react-feather';
 
 function App() {
@@ -15,10 +16,10 @@ function App() {
     <ChakraProvider>
       <Flex backgroundColor={backgroundColor} height='100vh' width='100vw'>
         <Flex paddingX='3vw' flexDirection='column' justifyContent='space-around' alignItems='stretch'>
-          <Text fontSize='3vw' fontFamily='Bebas Neue' align='center' backgroundColor={secondaryBackgroundColor} color={fontColor} paddingY='1vh'>
+          <Text fontSize='3vw' fontFamily='Baloo Chettan 2' align='center' backgroundColor={secondaryBackgroundColor} color={fontColor} paddingY='1vh'>
             Robert Fuchs
           </Text>
-          <Text fontSize='2.5vw' fontFamily='Coda' color={fontColor} align='center' paddingX='5vw'>
+          <Text fontSize='2.5vw' fontFamily='Baloo Chettan 2' color={fontColor} align='center' paddingX='5vw'>
             Software Developer, Sports Enthusiast and Optimist
           </Text>
           <Flex flexDirection='row' justifyContent='space-evenly'>
@@ -57,7 +58,8 @@ function App() {
           </Flex>
         </Flex>
         <Flex overflow='hidden' flexDirection='row-reverse'>
-          <Image src={ProfilePictureLarge} alt='Robert Fuchs with his dog' height='1080' width='auto' srcSet={`${ProfilePictureSmall} 267w, ${ProfilePictureMedium} 535w`}/>
+          <Image src={ProfilePictureLarge} alt='Robert Fuchs with his dog' filter='brightness(60%)' height='1080' width='auto' srcSet={`${ProfilePictureSmall} 267w, ${ProfilePictureMedium} 535w`}/>
+          {/* <Avatar src={AvatarImage} size='2xl' backgroundColor='white'/> */}
         </Flex>
       </Flex>
     </ChakraProvider>

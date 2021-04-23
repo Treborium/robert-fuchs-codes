@@ -8,7 +8,7 @@ import Divider from './divider';
 export default function DesktopApp(): JSX.Element {
   return (
     <div style={{ display: 'flex', backgroundColor: backgroundColor, height: '100vh', width: '100vw', border: 'none' }}>
-      <div style={{ display: 'flex', padding: '0 3vw', flexDirection: 'column', justifyContent: 'space-around', alignItems: 'stretch' }}>
+      <div style={{ display: 'flex', padding: '0 3vw', flexDirection: 'column', justifyContent: 'space-around', alignItems: 'stretch', width: '100vw' }}>
 
         <p style={{ fontSize: '4rem', fontFamily: 'Baloo Chettan 2', backgroundColor: secondaryBackgroundColor, color: fontColor, textAlign: 'center', padding: '1vh 0' }}>
           Robert Fuchs
@@ -18,7 +18,7 @@ export default function DesktopApp(): JSX.Element {
           Software Developer, Sports Enthusiast and Optimist
         </p>
 
-        <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'center' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-evenly', alignItems: 'center' }}>
           <IconButton icon={<Linkedin color={fontColor} size={iconSize} strokeWidth='1px'/>} ariaLabel='Open LinkedIn Profile' href='https://www.linkedin.com/in/robert-f-0b87a218a' />
           <Divider />
           <IconButton icon={<GitHub color={fontColor} size={iconSize} strokeWidth='1px'/>} ariaLabel='Open GitHub Profile' href='https://github.com/Treborium/robert-fuchs-codes' />

@@ -8,7 +8,7 @@ import Divider from './divider';
 export default function DesktopApp(): JSX.Element {
   return (
     <div style={{ display: 'flex', backgroundColor: backgroundColor, height: '100vh', width: '100vw', border: 'none' }}>
-      <div style={{ display: 'flex', padding: '0 3vw', flexDirection: 'column', justifyContent: 'space-around', alignItems: 'stretch', width: '100vw' }}>
+      <div style={{ display: 'flex', padding: '0 3vw', flexDirection: 'column', justifyContent: 'space-around', alignItems: 'stretch', width: '60vw' }}>
 
         <p style={{ fontSize: '4rem', fontFamily: 'Baloo Chettan 2', backgroundColor: secondaryBackgroundColor, color: fontColor, textAlign: 'center', padding: '1vh 0' }}>
           Robert Fuchs
@@ -27,8 +27,9 @@ export default function DesktopApp(): JSX.Element {
         </div>
       </div>
 
-      <div style={{ overflow: 'hidden', flexDirection: 'row-reverse' }}>
-        <Image src='/robert-and-tinka-large.jpg' alt='Robert Fuchs with his dog' height='1080' width='810px' />
+      <div style={{ width: '40vw', overflow: 'hidden', flexDirection: 'row-reverse' }}>
+        {/* <Image src='/robert-and-tinka-large.jpg' alt='Robert Fuchs with his dog' height='1080' width='810px' /> */}
+        <div style={{background: 'red', height: '100vh'}}/>
       </div>
     </div>
   );

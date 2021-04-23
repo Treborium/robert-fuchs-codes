@@ -1,12 +1,12 @@
 import React from 'react';
 import Image from 'next/image';
 import { Linkedin, GitHub, Mail } from 'react-feather';
-import { backgroundColor, secondaryBackgroundColor, fontColor, iconSize } from './Theme';
+import { backgroundColor, secondaryBackgroundColor, fontColor } from './Theme';
 import IconButton from './IconButton';
 import Divider from './Divider';
 
 export default function MobileApp(): JSX.Element {
-  const iconSize = '8vw';
+  const iconSize = '10vw';
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly', alignItems: 'stretch',  padding: '0 3vw', backgroundColor: backgroundColor, height: '100vh', width: '100vw', border: 'none' }}>

@@ -1,11 +1,5 @@
-import { Desktop } from '../components/Desktop';
-import { ChakraProvider, useMediaQuery } from '@chakra-ui/react';
-
+import Desktop from '../components/desktop';
 
 export default function HomePage() {
-  return (
-    <ChakraProvider>
-      <Desktop />
-    </ChakraProvider>
-  );
+  return <Desktop />
 }

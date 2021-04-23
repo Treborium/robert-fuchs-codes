@@ -1,5 +1,3 @@
-import { Icon } from 'react-feather';
-
 interface IconButtonProps {
   icon: React.ReactElement;
   href: string;

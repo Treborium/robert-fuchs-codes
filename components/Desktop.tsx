@@ -2,8 +2,8 @@ import React from 'react';
 import Image from 'next/image';
 import { Linkedin, GitHub, Mail } from 'react-feather';
 import { backgroundColor, secondaryBackgroundColor, fontColor, iconSize } from "./Theme";
-import IconButton from './icon-button';
-import Divider from './divider';
+import IconButton from './IconButton';
+import Divider from './Divider';
 
 export default function DesktopApp(): JSX.Element {
   return (

@@ -1,59 +1,48 @@
-import { Flex, IconButton, Icon, Text, Divider, Link } from "@chakra-ui/react";
-import React from "react";
+import React from 'react';
 import Image from 'next/image';
-import { Linkedin, GitHub, Mail } from "react-feather";
-import { backgroundColor, secondaryBackgroundColor, fontColor, buttonVariant, iconSize } from "./Theme";
+import { Linkedin, GitHub, Mail } from 'react-feather';
+import { backgroundColor, secondaryBackgroundColor, fontColor, iconSize } from "./Theme";
 
 export const Desktop: React.FC = () => (
-  <Flex backgroundColor={backgroundColor} height='100vh' width='100vw'>
-        <Flex paddingX='3vw' flexDirection='column' justifyContent='space-around' alignItems='stretch'>
+  <div style={{ display: 'flex', backgroundColor: backgroundColor, height: '100vh', width: '100vw' }}>
+    <div style={{ display: 'flex', padding: '0 3vw', flexDirection: 'column', justifyContent: 'space-around', alignItems: 'stretch' }}>
 
-          <h1 style={{ textAlign: 'center', fontSize: '4rem', fontFamily: 'Baloo Chettan 2', backgroundColor: secondaryBackgroundColor, color: fontColor, paddingY: '1vh' }}>
-            Robert Fuchs
-          </h1>
+      <p style={{ fontSize: '4rem', fontFamily: 'Baloo Chettan 2', backgroundColor: secondaryBackgroundColor, color: fontColor, textAlign: 'center', padding: '1vh 0' }}>
+        Robert Fuchs
+      </p>
 
-          <Text fontSize='5xl' fontFamily='Baloo Chettan 2' color={fontColor} align='center' paddingX='5vw'>
-            Software Developer, Sports Enthusiast and Optimist
-          </Text>
+      <p style={{ fontSize: '3rem', fontFamily: 'Baloo Chettan 2', color: fontColor, textAlign: 'center', padding: '0 5vw' }}>
+        Software Developer, Sports Enthusiast and Optimist
+      </p>
 
-          <Flex flexDirection='row' justifyContent='space-evenly' alignItems='center'>
-            <IconButton
-              variant={buttonVariant}
-              boxSize={iconSize}
-              icon={<Icon as={Linkedin} boxSize={iconSize} strokeWidth='1px' />}
-              aria-label="Open LinkedIn Profile"
-              href='https://www.linkedin.com/in/robert-f-0b87a218a'
-              as={Link}
-              isExternal={true}
-              color={fontColor}
-            />
-            <Divider orientation='vertical' />
-            <IconButton
-              variant={buttonVariant}
-              boxSize={iconSize}
-              icon={<Icon as={GitHub} boxSize={iconSize} strokeWidth='1px' />}
-              aria-label="Open GitHub Profile"
-              href='https://github.com/Treborium/robert-fuchs-codes'
-              as={Link}
-              isExternal={true}
-              color={fontColor}
-            />
-            <Divider orientation='vertical' />
-            <IconButton
-              variant={buttonVariant}
-              boxSize={iconSize}
-              icon={<Icon as={Mail} boxSize={iconSize} strokeWidth='1px' />}
-              aria-label="Send E-Mail"
-              href='mailto:robert@fuchs-mail.com'
-              as={Link}
-              isExternal={true}
-              color={fontColor}
-            />
-          </Flex>
-        </Flex>
+      <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'center' }}>
+        <button aria-label='Open LinkedIn Profile'>
+          <a href='https://www.linkedin.com/in/robert-f-0b87a218a' target='_blank' rel='noopener noreferrer'>
+            <Linkedin color={fontColor} size={iconSize} strokeWidth='1px'/>
+          </a>
+        </button>
+        
+        <hr style={{ width: '1px', height: iconSize, border: 'none', borderLeft: `1px solid hsla(200, 10%, 50%, 100)` }}/>
 
-        <Flex overflow='hidden' flexDirection='row-reverse'>
-          <Image src='/robert-and-tinka-large.jpg' alt='Robert Fuchs with his dog' height='1080' width='810px' />
-        </Flex>
-      </Flex>
+        <button aria-label='Open GitHub Profile'>
+          <a href='https://github.com/Treborium/robert-fuchs-codes' target='_blank' rel='noopener noreferrer'>
+            <GitHub color={fontColor} size={iconSize} strokeWidth='1px'/>
+          </a>
+        </button>
+
+        <hr style={{ width: '1px', height: iconSize, border: 'none', borderLeft: `1px solid hsla(200, 10%, 50%, 100)` }}/>
+
+        <button aria-label='Send E-Mail to Robert'>
+          <a href='mailto:robert@fuchs-mail.com' target='_blank' rel='noopener noreferrer'>
+            <Mail color={fontColor} size={iconSize} strokeWidth='1px'/>
+          </a>
+        </button>
+
+      </div>
+    </div>
+
+    <div style={{ overflow: 'hidden', flexDirection: 'row-reverse' }}>
+      <Image src='/robert-and-tinka-large.jpg' alt='Robert Fuchs with his dog' height='1080' width='810px' />
+    </div>
+  </div>
 );

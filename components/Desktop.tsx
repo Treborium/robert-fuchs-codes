@@ -1,19 +1,16 @@
-import { Flex, IconButton, Icon, Divider, Text, Image, Link } from "@chakra-ui/react";
+import { Flex, IconButton, Icon, Text, Divider, Link } from "@chakra-ui/react";
 import React from "react";
+import Image from 'next/image';
 import { Linkedin, GitHub, Mail } from "react-feather";
 import { backgroundColor, secondaryBackgroundColor, fontColor, buttonVariant, iconSize } from "./Theme";
-
-import ProfilePictureSmall from './resources/images/robert-and-tinka-small.jpg';
-import ProfilePictureMedium from './resources/images/robert-and-tinka-medium.jpg';
-import ProfilePictureLarge from './resources/images/robert-and-tinka-large.jpg';
 
 export const Desktop: React.FC = () => (
   <Flex backgroundColor={backgroundColor} height='100vh' width='100vw'>
         <Flex paddingX='3vw' flexDirection='column' justifyContent='space-around' alignItems='stretch'>
 
-          <Text fontSize='6xl' fontFamily='Baloo Chettan 2' align='center' backgroundColor={secondaryBackgroundColor} color={fontColor} paddingY='1vh'>
+          <h1 style={{ textAlign: 'center', fontSize: '4rem', fontFamily: 'Baloo Chettan 2', backgroundColor: secondaryBackgroundColor, color: fontColor, paddingY: '1vh' }}>
             Robert Fuchs
-          </Text>
+          </h1>
 
           <Text fontSize='5xl' fontFamily='Baloo Chettan 2' color={fontColor} align='center' paddingX='5vw'>
             Software Developer, Sports Enthusiast and Optimist
@@ -56,7 +53,7 @@ export const Desktop: React.FC = () => (
         </Flex>
 
         <Flex overflow='hidden' flexDirection='row-reverse'>
-          <Image src={ProfilePictureLarge} alt='Robert Fuchs with his dog' filter='brightness(60%)' height='1080' width='auto' srcSet={`${ProfilePictureSmall} 267w, ${ProfilePictureMedium} 535w`} />
+          <Image src='/robert-and-tinka-large.jpg' alt='Robert Fuchs with his dog' height='1080' width='810px' />
         </Flex>
       </Flex>
 );

@@ -1,7 +1,7 @@
 import { ChakraProvider, useMediaQuery } from '@chakra-ui/react';
 
 import { Desktop } from './Desktop';
-import { Mobile } from './Mobile';
+import { Mobile } from '../components/Mobile';
 
 
 export default function App() {

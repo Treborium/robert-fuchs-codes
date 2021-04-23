@@ -1,5 +1,5 @@
-import Desktop from '../components/desktop';
+import DesktopApp from '../components/desktop';
 
 export default function HomePage() {
-  return <Desktop />
+  return <DesktopApp />
 }

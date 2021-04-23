@@ -6,7 +6,7 @@ interface IconButtonProps {
   ariaLabel: string;
 }
 
-export default function IconButton(props: IconButtonProps): JSX.Element {
+export default function IconButton(props: IconButtonProps): React.ReactElement {
   const { icon, href, ariaLabel } = props;
   return (
     <button aria-label={ariaLabel} style={{ border: 'none', backgroundColor: 'rgba(0, 0, 0, 0)' }}>

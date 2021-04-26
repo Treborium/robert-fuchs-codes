@@ -11,7 +11,7 @@ export default function MobileApp(): JSX.Element {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly', alignItems: 'stretch',  padding: '0 3vw', backgroundColor: backgroundColor, height: '100vh', width: '100vw', border: 'none' }}>
       <div style={{ position: 'relative', height: '30vh', marginTop: ''}}>
-        <Image src='/profile-picture.ico' alt='Roberts Avatar' layout='fill' objectFit='contain'/>
+        <Image src='/logo512.webp' alt='Roberts Avatar' layout='fill' objectFit='contain' priority={true}/>
       </div>
 
       <p style={{ fontSize: '8vw', fontFamily: 'Baloo Chettan 2', backgroundColor: secondaryBackgroundColor, color: fontColor, textAlign: 'center', padding: '1vh 0', margin: '0 3vw' }}>

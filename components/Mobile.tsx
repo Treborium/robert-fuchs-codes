@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import { Linkedin, GitHub, Mail } from 'react-feather';
 import { backgroundColor, secondaryBackgroundColor, fontColor } from './Theme';
@@ -7,9 +7,11 @@ import Divider from './Divider';
 
 export default function MobileApp(): JSX.Element {
   const iconSize = '10vw';
+  const isBrowser = (typeof window !== "undefined");
+  const windowHeight = isBrowser ? window.innerHeight : '100vh';
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly', alignItems: 'stretch',  padding: '0 3vw', backgroundColor: backgroundColor, height: '100vh', width: '100vw', border: 'none' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly', alignItems: 'stretch',  padding: '0 3vw', backgroundColor: backgroundColor, height: windowHeight, width: '100vw', border: 'none' }}>
       <div style={{ position: 'relative', height: '30vh', marginTop: ''}}>
         <Image src='/logo512.webp' alt='Roberts Avatar' layout='fill' objectFit='contain' priority={true}/>
       </div>

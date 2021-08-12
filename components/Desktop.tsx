@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { Linkedin, GitHub, Mail } from 'react-feather';
-import { backgroundColor, secondaryBackgroundColor, fontColor, iconSize, accentColor } from "./Theme";
+import { backgroundColor, secondaryBackgroundColor, fontColor, iconSize } from "./Theme";
 import IconButton from './IconButton';
 import Divider from './Divider';
 
@@ -28,8 +28,7 @@ export default function DesktopApp(): JSX.Element {
       </div>
 
       <div style={{ width: '40vw', overflow: 'hidden', flexDirection: 'row-reverse' }}>
-        {/* <Image src='/robert-and-tinka-large.jpg' alt='Robert Fuchs with his dog' height='1080' width='810px' /> */}
-        <div style={{background: accentColor, height: '100vh'}}/>
+        <Image src='/robert.jpg' alt='Robert Fuchs' height='1080px' width='810px'/>
       </div>
     </div>
   );

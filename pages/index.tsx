@@ -1,6 +1,11 @@
 import dynamic from 'next/dynamic'
 import { useMediaQuery } from '../components/Hooks';
 
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+
 const DesktopApp = dynamic(() => import('../components/Desktop'));
 const MobileApp = dynamic(() => import('../components/Mobile'));
 

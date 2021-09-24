@@ -16,7 +16,9 @@ export default function RisingNumber({ value, label, unit }: Props) {
     <Box sx={styles.container}>
       <Box sx={styles.valueWithUnit}>
         <Typography fontSize='3rem'>{progress.toPrecision(2)}</Typography>
-        <Typography fontSize='2rem' sx={styles.unit}>{unit}</Typography>
+        <Typography fontSize='2rem' sx={styles.unit}>
+          {unit}
+        </Typography>
       </Box>
       <Typography fontSize='2rem'>{label}</Typography>
     </Box>
@@ -35,5 +37,5 @@ const styles = {
   unit: {
     alignSelf: 'center',
     paddingX: '12px',
-  }
+  },
 } as const;

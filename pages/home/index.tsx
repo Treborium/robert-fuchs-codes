@@ -1,13 +1,12 @@
 import React from 'react';
-import Image from 'next/image'
-import { Box,  Typography } from '@mui/material';
+import Image from 'next/image';
+import { Box, Typography } from '@mui/material';
 
 import Navigation from '../../components/Navigation';
 import SocialMediaButtonGroup from '../../components/SocialMediaButtonGroup';
 import Page from '../../components/Page';
 
 export default function Home() {
-
   return (
     <Page>
       <Navigation />
@@ -21,10 +20,16 @@ export default function Home() {
         <SocialMediaButtonGroup />
       </Box>
       <Box sx={styles.rightHalf}>
-        <Box sx={styles.gradiant} zIndex={1000}/>
-        <Image src='/title-picture.png' alt='picture of Robert Fuchs' layout='fill' objectFit='cover' placeholder='blur'/>
+        <Box sx={styles.gradiant} zIndex={1000} />
+        <Image
+          src='/title-picture.png'
+          alt='picture of Robert Fuchs'
+          layout='fill'
+          objectFit='cover'
+          placeholder='blur'
+        />
       </Box>
-      </Page>
+    </Page>
   );
 }
 
@@ -49,10 +54,11 @@ const styles = {
     fontWeight: 'bold',
   },
   gradiant: {
-    background: 'linear-gradient(90deg, #EFEFEF 0%, rgba(239, 239, 239, 0) 100%)',
+    background:
+      'linear-gradient(90deg, #EFEFEF 0%, rgba(239, 239, 239, 0) 100%)',
     mixBlendMode: 'normal',
     width: '50%',
     height: '100vh',
-    position: 'absolute'
-  }
+    position: 'absolute',
+  },
 } as const;

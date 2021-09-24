@@ -1,14 +1,20 @@
-import React from "react";
-import { Box, Link, Typography } from "@mui/material";
+import React from 'react';
+import { Box, Link, Typography } from '@mui/material';
 
 export default function Navigation() {
   return (
     <Box sx={styles.container}>
-      <Link href="/home" sx={styles.text}>home</Link>
+      <Link href='/home' sx={styles.text}>
+        home
+      </Link>
       <Typography sx={styles.marginPerItem}>|</Typography>
-      <Link href="/experience" sx={styles.text}>experience</Link>
+      <Link href='/experience' sx={styles.text}>
+        experience
+      </Link>
       <Typography sx={styles.marginPerItem}>|</Typography>
-      <Link href="/projects" sx={styles.text}>projects</Link>
+      <Link href='/projects' sx={styles.text}>
+        projects
+      </Link>
     </Box>
   );
 }
@@ -22,11 +28,12 @@ const styles = {
     border: 'none',
   },
   marginPerItem: {
-    margin: '0px 10px'
+    margin: '0px 10px',
   },
   text: {
     textTransform: 'uppercase',
     letterSpacing: '0.1rem',
-    color: '#000000'
-  }
+    color: '#000000',
+    fontSize: '1.5rem',
+  },
 } as const;

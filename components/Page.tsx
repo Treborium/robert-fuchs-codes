@@ -7,8 +7,15 @@ export interface Props {
   children?: React.ReactNode;
 }
 
-export default function Page({children}: Props) {
-  return <Container maxWidth={false} disableGutters sx={styles.container} children={children} />;
+export default function Page({ children }: Props) {
+  return (
+    <Container
+      maxWidth={false}
+      disableGutters
+      sx={styles.container}
+      children={children}
+    />
+  );
 }
 
 const styles = {

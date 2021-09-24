@@ -21,7 +21,11 @@ export default function Experience() {
         <Link sx={styles.link}>see all…</Link>
       </Box>
       <Box sx={styles.rightSide}>
-        <RisingNumber value={1.2} unit='years' label='Professional Experience' />
+        <RisingNumber
+          value={1.2}
+          unit='years'
+          label='Professional Experience'
+        />
         <RisingNumber value={8.3} unit='years' label='Coding Experience' />
       </Box>
     </Page>
@@ -53,5 +57,5 @@ const styles = {
   link: {
     color: theme.fontColor,
     alignSelf: 'flex-end',
-  }
+  },
 } as const;

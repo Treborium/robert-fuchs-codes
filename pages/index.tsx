@@ -1,5 +1,5 @@
 import React from 'react';
-import dynamic from 'next/dynamic'
+import dynamic from 'next/dynamic';
 import { useMediaQuery } from '../hooks/useMediaQuery';
 
 import '@fontsource/roboto/300.css';

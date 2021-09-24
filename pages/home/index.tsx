@@ -7,7 +7,6 @@ import SocialMediaButtonGroup from '../../components/SocialMediaButtonGroup';
 import { theme } from '../../components/Theme';
 
 export default function Home() {
-  const [isLoading, setLoading] = useState(true);
 
   return (
     <Container maxWidth={false} disableGutters sx={styles.container}>

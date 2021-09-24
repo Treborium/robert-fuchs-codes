@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Image from 'next/image'
-import { Box, Container, Typography, Skeleton } from '@mui/material';
+import { Box,  Typography } from '@mui/material';
 
 import Navigation from '../../components/Navigation';
 import SocialMediaButtonGroup from '../../components/SocialMediaButtonGroup';
-import { theme } from '../../components/Theme';
+import Page from '../../components/Page';
 
 export default function Home() {
 
   return (
-    <Container maxWidth={false} disableGutters sx={styles.container}>
+    <Page>
       <Navigation />
       <Box sx={styles.leftHalf}>
         <Typography variant='h1' sx={styles.heading} fontSize='3rem'>
@@ -24,15 +24,11 @@ export default function Home() {
         <Box sx={styles.gradiant} zIndex={1000}/>
         <Image src='/title-picture.png' alt='picture of Robert Fuchs' layout='fill' objectFit='cover' placeholder='blur'/>
       </Box>
-    </Container>
+      </Page>
   );
 }
 
 const styles = {
-  container: {
-    display: 'flex',
-    backgroundColor: theme.backgroundColor,
-  },
   leftHalf: {
     height: '100vh',
     width: '50%',

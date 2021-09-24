@@ -2,15 +2,13 @@ import React from "react";
 import { Box, Link, Typography } from "@mui/material";
 
 export default function Navigation() {
-  const linkStyle = {...styles.marginPerItem, ...styles.text};
-
   return (
     <Box sx={styles.container}>
-      <Link href="/home" sx={linkStyle}>home</Link>
+      <Link href="/home" sx={styles.text}>home</Link>
       <Typography sx={styles.marginPerItem}>|</Typography>
-      <Link href="/experience" sx={linkStyle}>experience</Link>
+      <Link href="/experience" sx={styles.text}>experience</Link>
       <Typography sx={styles.marginPerItem}>|</Typography>
-      <Link href="/projects" sx={linkStyle}>projects</Link>
+      <Link href="/projects" sx={styles.text}>projects</Link>
     </Box>
   );
 }

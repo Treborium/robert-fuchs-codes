@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { Box, Link, Typography } from '@mui/material';
+import { Box, Link } from '@mui/material';
 
 import { theme } from '../../components/Theme';
 import Navigation from '../../components/Navigation';
 import Page from '../../components/Page';
-import Skill from '../../components/Skill';
 import RisingNumber from '../../components/RisingNumber';
 import ExperiencesDialog from '../../components/ExperiencesDialog';
 import HighlightedSkills from '../../components/HighlightedSkills';

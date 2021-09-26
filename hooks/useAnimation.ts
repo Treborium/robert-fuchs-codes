@@ -8,7 +8,6 @@ export default function useAnimation(
   const [progress, setProgress] = useState(0.0);
   const animationUpdateIntervalInMilli =
     durationInMilli / (targetValue / stepSize);
-  console.log(animationUpdateIntervalInMilli);
 
   useEffect(() => {
     if (progress < targetValue) {

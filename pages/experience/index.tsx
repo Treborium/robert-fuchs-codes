@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Box, Link, Typography } from '@mui/material';
 
 import { theme } from '../../components/Theme';
@@ -6,19 +6,28 @@ import Navigation from '../../components/Navigation';
 import Page from '../../components/Page';
 import Skill from '../../components/Skill';
 import RisingNumber from '../../components/RisingNumber';
+import ExperiencesDialog from '../../components/ExperiencesDialog';
+import HighlightedSkills from '../../components/HighlightedSkills';
 
 export default function Experience() {
+  const [openDialog, setOpenDialog] = useState(false);
+
   return (
     <Page>
       <Navigation />
       <Box sx={styles.leftSide}>
-        <Skill label='NodeJs' value={80} />
-        <Skill label='AWS' value={60} />
-        <Skill label='React' value={100} />
-        <Skill label='Java' value={100} />
-        <Skill label='Python' value={80} />
-        {/* TODO: Add see all dialog */}
-        <Link sx={styles.link}>see all…</Link>
+        <HighlightedSkills />
+        <Link
+          sx={styles.link}
+          color={theme.fontColor}
+          onClick={() => setOpenDialog(true)}
+        >
+          see all…
+        </Link>
+        <ExperiencesDialog
+          open={openDialog}
+          onClose={() => setOpenDialog(false)}
+        />
       </Box>
       <Box sx={styles.rightSide}>
         <RisingNumber

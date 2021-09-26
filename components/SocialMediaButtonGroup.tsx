@@ -13,13 +13,24 @@ export default function SocialMediaButtonGroup() {
 
   return (
     <Box sx={styles.icons}>
-      <IconButton>
+      <IconButton
+        href='https://www.linkedin.com/in/robert-f-0b87a218a'
+        target='_blank'
+        aria-label='go to Roberts LinkedIn profile'
+      >
         <Linkedin {...iconProps} />
       </IconButton>
-      <IconButton>
+      <IconButton
+        href='https://github.com/Treborium/robert-fuchs-codes'
+        target='_blank'
+        aria-label='go to Roberts GitHub profile'
+      >
         <GitHub {...iconProps} />
       </IconButton>
-      <IconButton>
+      <IconButton
+        href='mailto:robert@fuchs-mail.com'
+        aria-label='send Robert an email'
+      >
         <Mail {...iconProps} />
       </IconButton>
     </Box>

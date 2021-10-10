@@ -65,9 +65,10 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     paddingTop: '20vh',
     paddingBottom: '10vh',
+    paddingLeft: '10vw',
   },
   link: {
     color: theme.fontColor,

@@ -10,6 +10,9 @@ import HighlightedSkills from '../../components/HighlightedSkills';
 
 export default function Experience() {
   const [openDialog, setOpenDialog] = useState(false);
+  const professionalExperienceStartDate = Date.parse('Aug 1, 2020');
+  const codingExperienceStartDate = Date.parse('Sep 1, 2013');
+  const inYears = 1000 * 60 * 60 * 24 * 365;
 
   return (
     <Page>
@@ -30,11 +33,15 @@ export default function Experience() {
       </Box>
       <Box sx={styles.rightSide}>
         <RisingNumber
-          value={1.2}
+          value={(Date.now() - professionalExperienceStartDate) / inYears}
           unit='years'
           label='Professional Experience'
         />
-        <RisingNumber value={8.3} unit='years' label='Coding Experience' />
+        <RisingNumber
+          value={(Date.now() - codingExperienceStartDate) / inYears}
+          unit='years'
+          label='Coding Experience'
+        />
       </Box>
     </Page>
   );
@@ -65,5 +72,6 @@ const styles = {
   link: {
     color: theme.fontColor,
     alignSelf: 'flex-end',
+    cursor: 'pointer',
   },
 } as const;

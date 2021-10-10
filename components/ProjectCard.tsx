@@ -49,6 +49,6 @@ export default function ProjectCard({
 }
 
 const styles = {
-  card: { minWidth: '20vw', maxWidth: '20vw', maxHeight: 340 },
-  content: { minHeight: '120px', maxHeight: '120px' },
+  card: { minWidth: '20rem', maxWidth: '20rem', maxHeight: 340 },
+  content: { minHeight: '8rem', maxHeight: '8rem' },
 } as const;

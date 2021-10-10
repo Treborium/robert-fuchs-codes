@@ -1,21 +1,21 @@
-import React, { useEffect, useState } from 'react';
-import { Box, LinearProgress, Typography } from '@mui/material';
+import React from 'react';
+import { Box, BoxProps, LinearProgress, Typography } from '@mui/material';
 import { linearProgressClasses } from '@mui/material/LinearProgress';
 import { styled } from '@mui/material/styles';
 
 import { theme } from './Theme';
 import useAnimation from '../hooks/useAnimation';
 
-export interface Props {
+export interface Props extends BoxProps {
   label: string;
   value: number;
 }
 
-export default function Skill({ label, value }: Props) {
+export default function Skill({ label, value, ...rest }: Props) {
   const progress = useAnimation(value, 1500, 10);
 
   return (
-    <Box>
+    <Box {...rest}>
       <Typography sx={styles.label} gutterBottom={false}>
         {label}
       </Typography>

@@ -21,11 +21,10 @@ export default function ExperiencesDialog({ open, onClose }: Props) {
     <Dialog open={open} onClose={onClose} maxWidth='md' fullWidth>
       <DialogTitle>All of my skills</DialogTitle>
       <DialogContent sx={styles.content}>
-        {/* TODO: Add bottom margin between skills */}
-        <HighlightedSkills />
-        <Skill label='React Native' value={60} />
-        <Skill label='Git' value={100} />
-        <Skill label='Bash' value={80} />
+        <HighlightedSkills sx={styles.skill} />
+        <Skill label='React Native' value={60} sx={styles.skill} />
+        <Skill label='Git' value={100} sx={styles.skill} />
+        <Skill label='Bash' value={80} sx={styles.skill} />
         <Skill label='C++' value={60} />
       </DialogContent>
       <DialogActions>
@@ -43,5 +42,8 @@ const styles = {
   },
   button: {
     color: theme.fontColor,
+  },
+  skill: {
+    marginBottom: '3vh',
   },
 } as const;

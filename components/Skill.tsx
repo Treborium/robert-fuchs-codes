@@ -1,5 +1,11 @@
 import React from 'react';
-import { Box, BoxProps, LinearProgress, Typography } from '@mui/material';
+import {
+  Box,
+  BoxProps,
+  LinearProgress,
+  Tooltip,
+  Typography,
+} from '@mui/material';
 import { linearProgressClasses } from '@mui/material/LinearProgress';
 import { styled } from '@mui/material/styles';
 
@@ -19,7 +25,9 @@ export default function Skill({ label, value, ...rest }: Props) {
       <Typography sx={styles.label} gutterBottom={false}>
         {label}
       </Typography>
-      <CustomLinearProgress variant='determinate' value={progress} />
+      <Tooltip title={`${value}/100`} arrow>
+        <CustomLinearProgress variant='determinate' value={progress} />
+      </Tooltip>
     </Box>
   );
 }

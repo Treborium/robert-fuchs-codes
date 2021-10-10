@@ -27,6 +27,8 @@ export default function Home() {
           layout='fill'
           objectFit='cover'
           placeholder='blur'
+          sizes='50vw'
+          priority
         />
       </Box>
     </Page>

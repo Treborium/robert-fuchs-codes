@@ -20,6 +20,7 @@ export default function SocialMediaButtonGroup({ iconSize }: Props) {
       <IconButton
         href='https://www.linkedin.com/in/robert-f-0b87a218a'
         target='_blank'
+        rel='noopener'
         aria-label='go to Roberts LinkedIn profile'
       >
         <Linkedin {...iconProps} />
@@ -27,6 +28,7 @@ export default function SocialMediaButtonGroup({ iconSize }: Props) {
       <IconButton
         href='https://github.com/Treborium/robert-fuchs-codes'
         target='_blank'
+        rel='noopener'
         aria-label='go to Roberts GitHub profile'
       >
         <GitHub {...iconProps} />

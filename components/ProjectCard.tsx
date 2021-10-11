@@ -27,7 +27,7 @@ export default function ProjectCard({
 }: Props) {
   return (
     <Card sx={{ ...styles.card, ...sx }} {...rest}>
-      <CardActionArea href={link} target='_blank'>
+      <CardActionArea href={link} target='_blank' rel='noopener'>
         <CardMedia
           component='img'
           height='140px'

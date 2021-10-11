@@ -6,6 +6,6 @@ import MobileHome from '../../views/mobile/MobileHome';
 import { useMediaQuery } from '../../hooks/useMediaQuery';
 
 export default function Home() {
-  const isDesktop = useMediaQuery('(min-width: 800px)');
+  const isDesktop = useMediaQuery();
   return <Page>{isDesktop ? <DesktopHome /> : <MobileHome />}</Page>;
 }

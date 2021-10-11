@@ -1,5 +1,5 @@
-import { BoxProps } from '@mui/system';
 import React from 'react';
+import { BoxProps } from '@mui/system';
 
 import Skill from './Skill';
 

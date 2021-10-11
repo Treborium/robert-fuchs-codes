@@ -1,5 +1,5 @@
 import React from 'react';
-import { IconButton, Menu, MenuItem } from '@mui/material';
+import { IconButton, Link, Menu, MenuItem } from '@mui/material';
 import { Menu as MenuIcon } from 'react-feather';
 
 import { theme } from '../components/Theme';
@@ -7,6 +7,7 @@ import { theme } from '../components/Theme';
 export default function HamburgerMenu() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
+
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
   };
@@ -25,7 +26,7 @@ export default function HamburgerMenu() {
         onClick={handleClick}
         sx={styles.hamburger}
       >
-        <MenuIcon color={theme.fontColor} strokeWidth='3px' />
+        <MenuIcon color={theme.fontColor} strokeWidth='2px' size='40px' />
       </IconButton>
       <Menu
         id='basic-menu'
@@ -36,18 +37,30 @@ export default function HamburgerMenu() {
           'aria-labelledby': 'basic-button',
         }}
       >
-        {/* TODO: Navigate to respective page */}
-        <MenuItem onClick={handleClose} href='/home'>
-          Home
+        <MenuItem onClick={handleClose}>
+          <UnstyledLink text='Home' href='/home' />
         </MenuItem>
-        <MenuItem onClick={handleClose} href='/experience'>
-          Experience
+        <MenuItem onClick={handleClose}>
+          <UnstyledLink text='Experience' href='/experience' />
         </MenuItem>
-        <MenuItem onClick={handleClose} href='/projects'>
-          Projects
+        <MenuItem onClick={handleClose}>
+          <UnstyledLink text='Projects' href='/projects' />
         </MenuItem>
       </Menu>
     </div>
+  );
+}
+
+interface Props {
+  text: string;
+  href: string;
+}
+
+function UnstyledLink({ text, href }: Props): JSX.Element {
+  return (
+    <Link href={href} underline='none' sx={{ color: theme.fontColor }}>
+      {text}
+    </Link>
   );
 }
 

@@ -4,9 +4,13 @@ import { GitHub, Linkedin, Mail } from 'react-feather';
 
 import { theme } from './Theme';
 
-export default function SocialMediaButtonGroup() {
+interface Props {
+  iconSize: string;
+}
+
+export default function SocialMediaButtonGroup({ iconSize }: Props) {
   const iconProps = {
-    size: '80px',
+    size: iconSize,
     strokeWidth: '1px',
     color: theme.fontColor,
   };

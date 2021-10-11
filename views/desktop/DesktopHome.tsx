@@ -16,7 +16,7 @@ export default function DesktopHome() {
         <Typography variant='h2' fontSize='2rem'>
           Professional Software Developer, Sports Enthusiast and Optimist
         </Typography>
-        <SocialMediaButtonGroup />
+        <SocialMediaButtonGroup iconSize='80px'/>
       </Box>
       <Box sx={styles.rightHalf}>
         <Box sx={styles.gradiant} zIndex={1000} />

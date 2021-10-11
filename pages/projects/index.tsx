@@ -41,7 +41,7 @@ const projects: ProjectProps[] = [
   {
     title: 'Personal Website',
     description: 'my personal website written with React.js 👨',
-    imageSrc: '',
+    imageSrc: '/personal-website-banner.png',
     link: 'https://github.com/Treborium/robert-fuchs-codes',
   },
   {

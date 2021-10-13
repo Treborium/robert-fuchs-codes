@@ -1,78 +1,14 @@
-import React, { useState } from 'react';
-import { Box, Link } from '@mui/material';
+import React from 'react';
 
-import { theme } from '../../components/Theme';
-import Navigation from '../../components/Navigation';
 import Page from '../../components/Page';
-import RisingNumber from '../../components/RisingNumber';
-import ExperiencesDialog from '../../components/ExperiencesDialog';
-import HighlightedSkills from '../../components/HighlightedSkills';
+import DesktopExperience from '../../views/desktop/DesktopExperience';
+import MobileExperience from '../../views/mobile/MobileExperience';
+import { useMediaQuery } from '../../hooks/useMediaQuery';
 
 export default function Experience() {
-  const [openDialog, setOpenDialog] = useState(false);
-  const professionalExperienceStartDate = Date.parse('Aug 1, 2020');
-  const codingExperienceStartDate = Date.parse('Sep 1, 2013');
-  const inYears = 1000 * 60 * 60 * 24 * 365;
+  const isDesktop = useMediaQuery();
 
-  return (
-    <Page>
-      <Navigation />
-      <Box sx={styles.leftSide}>
-        <HighlightedSkills />
-        <Link
-          sx={styles.link}
-          color={theme.fontColor}
-          onClick={() => setOpenDialog(true)}
-        >
-          see all…
-        </Link>
-        <ExperiencesDialog
-          open={openDialog}
-          onClose={() => setOpenDialog(false)}
-        />
-      </Box>
-      <Box sx={styles.rightSide}>
-        <RisingNumber
-          value={(Date.now() - professionalExperienceStartDate) / inYears}
-          unit='years'
-          label='Professional Experience'
-        />
-        <RisingNumber
-          value={(Date.now() - codingExperienceStartDate) / inYears}
-          unit='years'
-          label='Coding Experience'
-        />
-      </Box>
-    </Page>
-  );
+  return <Page>
+    {isDesktop ? <DesktopExperience /> : <MobileExperience />}
+  </Page>;
 }
-
-const styles = {
-  leftSide: {
-    height: '100vh',
-    width: '50%',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-    paddingLeft: '45px',
-    paddingRight: '10%',
-    paddingTop: '20vh',
-    paddingBottom: '10vh',
-  },
-  rightSide: {
-    height: '100vh',
-    width: '50%',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-    alignItems: 'flex-start',
-    paddingTop: '20vh',
-    paddingBottom: '10vh',
-    paddingLeft: '10vw',
-  },
-  link: {
-    color: theme.fontColor,
-    alignSelf: 'flex-end',
-    cursor: 'pointer',
-  },
-} as const;

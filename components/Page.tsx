@@ -22,6 +22,6 @@ const styles = {
   container: {
     display: 'flex',
     backgroundColor: theme.backgroundColor,
-    height: '100vh',
+    minHeight: '100vh',
   },
 } as const;

@@ -37,38 +37,17 @@ export default function HamburgerMenu() {
           'aria-labelledby': 'basic-button',
         }}
       >
-        <MenuItem onClick={handleClose}>
-          <UnstyledLink text='Home' href='/home' />
+        <MenuItem onClick={handleClose} href='/home' component='a'>
+          Home
         </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <UnstyledLink text='Experience' href='/experience' />
+        <MenuItem onClick={handleClose} href='/experience' component='a'>
+          Experience
         </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <UnstyledLink text='Projects' href='/projects' />
+        <MenuItem onClick={handleClose} href='/projects' component='a'>
+          Projects
         </MenuItem>
       </Menu>
     </div>
   );
 }
 
-interface Props {
-  text: string;
-  href: string;
-}
-
-function UnstyledLink({ text, href }: Props): JSX.Element {
-  return (
-    <Link href={href} underline='none' sx={{ color: theme.fontColor }}>
-      {text}
-    </Link>
-  );
-}
-
-const styles = {
-  hamburger: {
-    position: 'absolute',
-    top: '10px',
-    right: '10px',
-    zIndex: 1000,
-  },
-} as const;

@@ -13,7 +13,7 @@ import useRandomHslColor from '../hooks/useRandomColor';
 export interface Props extends CardProps {
   title: string;
   description: string;
-  imageSrc: string;
+  imageSrc?: string;
   link: string;
 }
 
@@ -28,13 +28,15 @@ export default function ProjectCard({
   return (
     <Card sx={{ ...styles.card, ...sx }} {...rest}>
       <CardActionArea href={link} target='_blank' rel='noopener'>
-        <CardMedia
-          component='img'
-          height='140px'
-          image={imageSrc}
-          alt={title}
-          sx={{ backgroundColor: useRandomHslColor() }}
-        />
+        {imageSrc && (
+          <CardMedia
+            component='img'
+            height='140px'
+            image={imageSrc}
+            alt={title}
+            sx={{ backgroundColor: useRandomHslColor() }}
+          />
+        )}
         <CardContent sx={styles.content}>
           <Typography gutterBottom variant='h6' component='div' noWrap>
             {title}

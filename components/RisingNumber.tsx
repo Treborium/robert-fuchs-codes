@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, BoxProps, Typography } from '@mui/material';
 
 import useAnimation from '../hooks/useAnimation';
+import { theme } from './Theme';
 
 interface Props extends BoxProps {
   value: number;
@@ -45,6 +46,7 @@ const styles = {
   container: {
     display: 'flex',
     flexDirection: 'column',
+    fontFamily: theme.fontFamilySans,
   },
   valueWithUnit: {
     display: 'flex',

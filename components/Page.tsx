@@ -21,7 +21,8 @@ export default function Page({ children }: Props) {
 const styles = {
   container: {
     display: 'flex',
-    backgroundColor: theme.backgroundColor,
     minHeight: '100vh',
+    backgroundColor: theme.backgroundColor,
+    fontFamily: theme.fontFamilySerif,
   },
 } as const;

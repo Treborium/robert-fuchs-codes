@@ -9,6 +9,7 @@ import {
 } from '@mui/material';
 
 import useRandomHslColor from '../hooks/useRandomColor';
+import { theme } from './Theme';
 
 export interface Props extends CardProps {
   title: string;
@@ -38,7 +39,13 @@ export default function ProjectCard({
           />
         )}
         <CardContent sx={styles.content}>
-          <Typography gutterBottom variant='h6' component='div' noWrap>
+          <Typography
+            gutterBottom
+            variant='h6'
+            component='div'
+            noWrap
+            sx={styles.title}
+          >
             {title}
           </Typography>
           <Typography variant='body2' color='text.secondary'>
@@ -53,4 +60,5 @@ export default function ProjectCard({
 const styles = {
   card: { minWidth: '20rem', maxWidth: '20rem', maxHeight: 340 },
   content: { minHeight: '8rem', maxHeight: '8rem' },
+  title: { fontFamily: theme.fontFamilySans },
 } as const;

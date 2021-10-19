@@ -36,6 +36,7 @@ const styles = {
   label: {
     fontSize: '1.5rem',
     marginBottom: '15px',
+    fontFamily: theme.fontFamilySerif,
   },
 } as const;
 

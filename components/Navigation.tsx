@@ -32,6 +32,7 @@ const styles = {
     top: '35px',
     left: '45px',
     border: 'none',
+    fontFamily: theme.fontFamilySans,
   },
   divider: {
     margin: '0px 10px',

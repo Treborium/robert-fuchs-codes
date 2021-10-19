@@ -4,6 +4,7 @@ import { Typography, Box } from '@mui/material';
 
 import SocialMediaButtonGroup from '../../components/SocialMediaButtonGroup';
 import Navigation from '../../components/Navigation';
+import { theme } from '../../components/Theme';
 
 export default function DesktopHome() {
   return (
@@ -13,10 +14,10 @@ export default function DesktopHome() {
         <Typography variant='h1' sx={styles.heading} fontSize='3rem'>
           Robert Fuchs
         </Typography>
-        <Typography variant='h2' fontSize='2rem'>
+        <Typography variant='h2' fontSize='2rem' sx={styles.description}>
           Professional Software Developer, Sports Enthusiast and Optimist
         </Typography>
-        <SocialMediaButtonGroup iconSize='80px'/>
+        <SocialMediaButtonGroup iconSize='80px' />
       </Box>
       <Box sx={styles.rightHalf}>
         <Box sx={styles.gradiant} zIndex={1000} />
@@ -53,6 +54,10 @@ const styles = {
     textTransform: 'uppercase',
     letterSpacing: '0.2rem',
     fontWeight: 'bold',
+    fontFamily: theme.fontFamilySans,
+  },
+  description: {
+    fontFamily: theme.fontFamilySerif,
   },
   gradiant: {
     background:

@@ -51,3 +51,11 @@ export default function HamburgerMenu() {
   );
 }
 
+const styles = {
+  hamburger: {
+    position: 'absolute',
+    top: '10px',
+    right: '10px',
+    zIndex: 1000,
+  },
+} as const;

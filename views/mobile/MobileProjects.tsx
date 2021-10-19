@@ -1,38 +1,37 @@
 import React from 'react';
 import {
-  List,
-  ListItemButton,
-  ListItemIcon,
-  ListItemText,
+  Box,
 } from '@mui/material';
 
 import HamburgerMenu from '../../components/HamburgerMenu';
 import { ProjectData, ProjectsData } from '../../data/projectsData';
+import ProjectCard from '../../components/ProjectCard';
 
 export default function MobileProjects() {
-  // TODO: Add outline to list
+  const additionalCardProps = {
+    imageSrc: undefined,
+    sx: { marginBottom: '3vh' },
+  };
+
   return (
     <>
       <HamburgerMenu />
-      <List sx={styles.list}>
-        {ProjectsData.map((props: ProjectData, index: number) => (
-          <ListItemButton
-            component='a'
-            href={props.link}
-            sx={index % 2 === 1 && { backgroundColor: '#E0E0E0' }}
-          >
-            <ListItemIcon>{props.icon}</ListItemIcon>
-            <ListItemText primary={props.title} />
-          </ListItemButton>
+      <Box sx={styles.container}>
+        {ProjectsData.map((props: ProjectData) => (
+          <ProjectCard {...{ ...props, ...additionalCardProps }} />
         ))}
-      </List>
+      </Box>
     </>
   );
 }
 
 const styles = {
-  list: {
+  container: {
     marginTop: '10vh',
     width: '100vw',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 } as const;

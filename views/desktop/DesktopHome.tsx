@@ -3,13 +3,13 @@ import Image from 'next/image';
 import { Typography, Box } from '@mui/material';
 
 import SocialMediaButtonGroup from '../../components/SocialMediaButtonGroup';
-import Navigation from '../../components/Navigation';
+import Navigation, { NavigationPages } from '../../components/Navigation';
 import { theme } from '../../components/Theme';
 
 export default function DesktopHome() {
   return (
     <>
-      <Navigation />
+      <Navigation currentPage={NavigationPages.Home}/>
       <Box sx={styles.leftHalf}>
         <Typography variant='h1' sx={styles.heading} fontSize='3rem'>
           Robert Fuchs

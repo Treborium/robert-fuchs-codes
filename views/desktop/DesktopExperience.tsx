@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { Box, Link } from '@mui/material';
 
-import Navigation from '../../components/Navigation';
+import Navigation, { NavigationPages } from '../../components/Navigation';
 import ExperiencesDialog from '../../components/ExperiencesDialog';
 import RisingNumber from '../../components/RisingNumber';
 import HighlightedSkills from '../../components/HighlightedSkills';
 import { theme } from '../../components/Theme';
+import PagesManifestPlugin from 'next/dist/build/webpack/plugins/pages-manifest-plugin';
 
 export default function DesktopExperience() {
   const [openDialog, setOpenDialog] = useState(false);
@@ -15,7 +16,7 @@ export default function DesktopExperience() {
 
   return (
     <>
-      <Navigation />
+      <Navigation currentPage={NavigationPages.Experience}/>
       <Box sx={styles.leftSide}>
         <HighlightedSkills />
         <Link

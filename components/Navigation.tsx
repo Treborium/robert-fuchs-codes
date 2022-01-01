@@ -3,23 +3,40 @@ import { Box, Link, Typography } from '@mui/material';
 
 import { theme } from './Theme';
 
-export default function Navigation() {
+export enum NavigationPages {
+  Home = 'home',
+  Experience = 'experience',
+  Projects = 'projects',
+}
+
+interface Props {
+  currentPage: NavigationPages;
+}
+
+export default function Navigation({ currentPage }: Props) {
   const linkProps = {
     color: theme.fontColor,
   };
 
+  const highlightIfCurrent = (page: NavigationPages) => {
+    if (page === currentPage) {
+      return { ...styles.text, ...styles.highlighted };
+    }
+    return styles.text;
+  }
+
   return (
     <Box sx={styles.container}>
-      <Link href='/home' sx={styles.text} {...linkProps}>
-        home
+      <Link href='/home' sx={highlightIfCurrent(NavigationPages.Home)} {...linkProps}>
+        { NavigationPages.Home }
       </Link>
       <Typography sx={styles.divider}>|</Typography>
-      <Link href='/experience' sx={styles.text} {...linkProps}>
-        experience
+      <Link href='/experience' sx={highlightIfCurrent(NavigationPages.Experience)} {...linkProps}>
+        { NavigationPages.Experience }
       </Link>
       <Typography sx={styles.divider}>|</Typography>
-      <Link href='/projects' sx={styles.text} {...linkProps}>
-        projects
+      <Link href='/projects' sx={highlightIfCurrent(NavigationPages.Projects)} {...linkProps}>
+        { NavigationPages.Projects }
       </Link>
     </Box>
   );
@@ -43,6 +60,9 @@ const styles = {
     letterSpacing: '0.1rem',
     color: '#000000',
     fontSize: '1.5rem',
-    
+    fontWeight: 300,
   },
+  highlighted: {
+    fontWeight: 500,
+  }
 } as const;

@@ -25,7 +25,7 @@ export const ProjectsData: ProjectData[] = [
     title: 'Karlsruher Könige',
     description:
       'a mobile first webpage for the awesome gymnastics club of KIT 🤸‍♀️',
-    imageSrc: 'abc',
+    imageSrc: '/karlsruher-koenige-banner.png',
     link: 'https://github.com/Treborium/karlsruher-koenige',
     icon: <Activity />,
   },
@@ -33,7 +33,7 @@ export const ProjectsData: ProjectData[] = [
     title: 'wmctrl in Rust',
     description:
       'a wrapper for the command line tool wmctrl written in Rust ⚙️',
-    imageSrc: 'abc',
+    imageSrc: 'wmctrl-banner.png',
     link: 'https://github.com/Treborium/rust-wmctrl',
     icon: <Settings />,
   },
@@ -41,7 +41,7 @@ export const ProjectsData: ProjectData[] = [
     title: 'Font Sizer (Firefox extension)',
     description:
       'a firefox extension to easily change the font size of a website 🔤',
-    imageSrc: 'abc',
+    imageSrc: 'font-sizer-banner.png',
     link: 'https://github.com/Treborium/Font-Sizer-Firefox',
     icon: <Type />,
   },

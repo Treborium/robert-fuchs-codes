@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box } from '@mui/material';
 
-import Navigation from '../../components/Navigation';
+import Navigation, { NavigationPages } from '../../components/Navigation';
 import { ProjectsData } from '../../data/projectsData';
 import ProjectCard, {
   Props as ProjectProps,
@@ -24,7 +24,7 @@ export default function DesktopProjects() {
 
   return (
     <>
-      <Navigation />
+      <Navigation currentPage={NavigationPages.Projects}/>
       <Box sx={styles.container}>
         <Box sx={styles.row}>
           {renderProjects(0, numHalfOfProjects)}

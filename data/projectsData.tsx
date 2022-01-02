@@ -45,18 +45,4 @@ export const ProjectsData: ProjectData[] = [
     link: 'https://github.com/Treborium/Font-Sizer-Firefox',
     icon: <Type />,
   },
-  {
-    title: 'Switcheroo',
-    description: 'easily switch between source and test files in vscode 🔄',
-    imageSrc: 'abc',
-    link: 'https://github.com/Treborium/switcheroo',
-    icon: <RefreshCw />,
-  },
-  {
-    title: 'Local Snippet Manager',
-    description: 'code snippet manager per project 📚',
-    imageSrc: 'abc',
-    link: 'ht‚tps://github.com/Treborium/local-snippet-manager',
-    icon: <Code />,
-  },
 ];

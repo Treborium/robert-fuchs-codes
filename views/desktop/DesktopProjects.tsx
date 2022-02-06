@@ -2,36 +2,22 @@ import React from 'react';
 import { Box } from '@mui/material';
 
 import Navigation, { NavigationPages } from '../../components/Navigation';
-import { ProjectsData } from '../../data/projectsData';
+import { ProjectsData, ProjectData } from '../../data/projectsData';
 import ProjectCard, {
   Props as ProjectProps,
 } from '../../components/ProjectCard';
 
 export default function DesktopProjects() {
-  const numHalfOfProjects = Math.floor(ProjectsData.length / 2);
-
-  const renderProjects = (start: number, end: number) => {
-    return ProjectsData
-      .slice(start, end)
-      .map((props: ProjectProps, index: number) => (
-        <ProjectCard
-          {...props}
-          key={props.title}
-          sx={index === end - start - 1 ? styles.lastCard : styles.none}
-        />
-      ));
-  };
 
   return (
     <>
       <Navigation currentPage={NavigationPages.Projects}/>
       <Box sx={styles.container}>
-        <Box sx={styles.row}>
-          {renderProjects(0, numHalfOfProjects)}
-        </Box>
-        <Box sx={styles.row}>
-          {renderProjects(numHalfOfProjects, ProjectsData.length)}
-        </Box>
+        {ProjectsData.map((data: ProjectData) => {
+          return (
+            <ProjectCard key={data.title} {...data} sx={styles.card}/>
+          );
+        })}
       </Box>
     </>
   );
@@ -42,22 +28,16 @@ export default function DesktopProjects() {
 const styles = {
   container: {
     display: 'flex',
-    flexDirection: 'column',
+    flexDirection: 'row',
     width: '100vw',
     height: '100vh',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingLeft: '45px',
-    paddingY: '15vh',
+    flexWrap: 'wrap',
+    paddingX: '2vw',
+    paddingY: '5rem',
   },
-  row: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    width: '100%',
-  },
-  lastCard: {
-    marginRight: '45px',
-  },
-  none: {},
+  card: {
+    marginX: '1vw',
+  }
 } as const;

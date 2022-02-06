@@ -17,8 +17,8 @@ export default function MobileProjects() {
     <>
       <HamburgerMenu />
       <Box sx={styles.container}>
-        {ProjectsData.map((props: ProjectData) => (
-          <ProjectCard {...{ ...props, ...additionalCardProps }} />
+        {ProjectsData.map((props: ProjectData, index) => (
+          <ProjectCard key={index} {...{ ...props, ...additionalCardProps }} />
         ))}
       </Box>
     </>

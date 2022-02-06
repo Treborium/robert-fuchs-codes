@@ -6,6 +6,8 @@ import SocialMediaButtonGroup from '../../components/SocialMediaButtonGroup';
 import Navigation, { NavigationPages } from '../../components/Navigation';
 import { theme } from '../../components/Theme';
 
+import TitlePicture from '../../public/title-picture.png';
+
 export default function DesktopHome() {
   return (
     <>
@@ -22,11 +24,10 @@ export default function DesktopHome() {
       <Box sx={styles.rightHalf}>
         <Box sx={styles.gradiant} zIndex={1000} />
         <Image
-          src='/title-picture.png'
+          src={TitlePicture}
           alt='picture of Robert Fuchs'
           layout='fill'
           objectFit='cover'
-          placeholder='blur'
           sizes='50vw'
           priority
         />

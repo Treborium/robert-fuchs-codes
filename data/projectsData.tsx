@@ -3,8 +3,6 @@ import {
   Activity,
   Settings,
   Type,
-  RefreshCw,
-  Code,
 } from 'react-feather';
 
 import { Props as ProjectProps } from '../components/ProjectCard';
@@ -20,6 +18,7 @@ export const ProjectsData: ProjectData[] = [
     imageSrc: '/personal-website-banner.png',
     link: 'https://github.com/Treborium/robert-fuchs-codes',
     icon: <Globe />,
+    technologies: ['React', 'Next.js', 'TypeScript'],
   },
   {
     title: 'Karlsruher Könige',
@@ -28,6 +27,7 @@ export const ProjectsData: ProjectData[] = [
     imageSrc: '/karlsruher-koenige-banner.png',
     link: 'https://github.com/Treborium/karlsruher-koenige',
     icon: <Activity />,
+    technologies: ['React', 'Next.js', 'TypeScript', 'AWS S3', 'AWS Lambda', 'AWS DynamoDB'],
   },
   {
     title: 'wmctrl in Rust',
@@ -36,6 +36,7 @@ export const ProjectsData: ProjectData[] = [
     imageSrc: 'wmctrl-banner.png',
     link: 'https://github.com/Treborium/rust-wmctrl',
     icon: <Settings />,
+    technologies: ['Rust', 'Bash']
   },
   {
     title: 'Font Sizer (Firefox extension)',
@@ -44,5 +45,6 @@ export const ProjectsData: ProjectData[] = [
     imageSrc: 'font-sizer-banner.png',
     link: 'https://github.com/Treborium/Font-Sizer-Firefox',
     icon: <Type />,
+    technologies: ['JavaScript', 'HTML', 'CSS']
   },
 ];

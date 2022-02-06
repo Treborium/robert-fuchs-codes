@@ -16,7 +16,6 @@ export default function MobileHome() {
             alt='picture of Robert Fuchs'
             layout='fill'
             objectFit='cover'
-            placeholder='blur'
             sizes='100vw'
             priority
           />

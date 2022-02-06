@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import '../styles.css';
+import { Layout } from '../components/Layout';
 
 // This default export is required in a new `pages/_app.js` file.
 export default function MyApp({ Component, pageProps }) {
@@ -21,7 +22,9 @@ export default function MyApp({ Component, pageProps }) {
         />
         <title>Robert Fuchs</title>
       </Head>
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </>
   );
 }

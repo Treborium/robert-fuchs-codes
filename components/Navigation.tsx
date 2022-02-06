@@ -1,68 +1,56 @@
 import React from 'react';
-import { Box, Link, Typography } from '@mui/material';
+import { Box, Button, IconButton, Link, Menu, MenuItem, Typography } from '@mui/material';
 
 import { theme } from './Theme';
+import { Menu as MenuIcon } from 'react-feather';
 
-export enum NavigationPages {
-  Home = 'home',
-  Experience = 'experience',
-  Projects = 'projects',
-}
 
-interface Props {
-  currentPage: NavigationPages;
-}
-
-export default function Navigation({ currentPage }: Props) {
-  const linkProps = {
-    color: theme.fontColor,
+export default function Navigation() {
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
   };
 
-  const highlightIfCurrent = (page: NavigationPages) => {
-    if (page === currentPage) {
-      return { ...styles.text, ...styles.highlighted };
-    }
-    return styles.text;
-  }
-
   return (
-    <Box sx={styles.container}>
-      <Link href='/home' sx={highlightIfCurrent(NavigationPages.Home)} {...linkProps}>
-        { NavigationPages.Home }
-      </Link>
-      <Typography sx={styles.divider}>|</Typography>
-      <Link href='/experience' sx={highlightIfCurrent(NavigationPages.Experience)} {...linkProps}>
-        { NavigationPages.Experience }
-      </Link>
-      <Typography sx={styles.divider}>|</Typography>
-      <Link href='/projects' sx={highlightIfCurrent(NavigationPages.Projects)} {...linkProps}>
-        { NavigationPages.Projects }
-      </Link>
-    </Box>
+    <div>
+      <IconButton
+        id="basic-button"
+        aria-controls={open ? 'basic-menu' : undefined}
+        aria-haspopup="true"
+        aria-expanded={open ? 'true' : undefined}
+        onClick={handleClick}
+        sx={styles.menu}
+        size='large'
+      >
+        <MenuIcon size='50px'/>
+      </IconButton>
+      <Menu
+        id="basic-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        MenuListProps={{
+          'aria-labelledby': 'basic-button',
+        }}
+      >
+        <MenuItem onClick={handleClose} href='/home'>Home</MenuItem>
+        <MenuItem onClick={handleClose} href='/experience'>Experience</MenuItem>
+        <MenuItem onClick={handleClose} href='/contact'>Contact</MenuItem>
+      </Menu>
+    </div>
   );
 }
 
 const styles = {
-  container: {
-    display: 'flex',
-    position: 'fixed',
-    top: '35px',
-    left: '45px',
-    border: 'none',
-    fontFamily: theme.fontFamilySans,
-  },
-  divider: {
-    margin: '0px 10px',
-    fontSize: '1.5rem',
-  },
-  text: {
-    textTransform: 'uppercase',
-    letterSpacing: '0.1rem',
-    color: '#000000',
-    fontSize: '1.5rem',
-    fontWeight: 300,
-  },
-  highlighted: {
-    fontWeight: 500,
+  menu: {
+    position: 'absolute',
+    right: '50px',
+    top: '50px',
+    color: theme.fontColor,
   }
 } as const;
+

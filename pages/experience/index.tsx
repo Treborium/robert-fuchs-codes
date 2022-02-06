@@ -1,14 +1,8 @@
 import React from 'react';
 
-import Page from '../../components/Page';
-import DesktopExperience from '../../views/desktop/DesktopExperience';
-import MobileExperience from '../../views/mobile/MobileExperience';
-import { useMediaQuery } from '../../hooks/useMediaQuery';
+import { Typography } from '@mui/material';
 
 export default function Experience() {
-  const isDesktop = useMediaQuery();
 
-  return <Page>
-    {isDesktop ? <DesktopExperience /> : <MobileExperience />}
-  </Page>;
+  return <Typography>Experience</Typography>
 }

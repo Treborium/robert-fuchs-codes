@@ -1,6 +1,6 @@
 export const theme = {
-  fontColor: '#000000',
-  backgroundColor: '#EFEFEF',
+  fontColor: '#FFFFFF',
+  backgroundColor: '#000000',
   fontFamilySans: 'Noto Sans Ogham, sans-serif',
   fontFamilySerif: 'Noto Serif JP, serif',
 };

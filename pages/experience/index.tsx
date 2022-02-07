@@ -1,29 +1,16 @@
 import React from 'react';
+import { Box } from '@mui/material';
 
-import { Box, Button, IconButton, Typography } from '@mui/material';
-import { CertificateOutline, SourceBranch, CodeTags } from 'mdi-material-ui';
+import { Skills } from '../../components/experience_items/Skills';
+import { Certficates } from '../../components/experience_items/Certificates';
+import { Resume } from '../../components/experience_items/Resume';
 
 export default function Experience() {
   return (
     <Box sx={styles.experiences}>
-      <Button sx={styles.button}>
-        <Box>
-          <CodeTags sx={styles.icon} />
-          <Typography align='center'>Skills</Typography>
-        </Box>
-      </Button>
-      <Button sx={styles.button}>
-        <Box>
-          <CertificateOutline sx={styles.icon} />
-          <Typography align='center'>Certificates</Typography>
-        </Box>
-      </Button>
-      <Button sx={styles.button}>
-        <Box>
-          <SourceBranch sx={styles.icon} />
-          <Typography align='center'>Resume</Typography>
-        </Box>
-      </Button>
+      <Skills />
+      <Certficates />
+      <Resume />
     </Box>
   );
 }
@@ -35,12 +22,5 @@ const styles = {
     height: '100vh',
     justifyContent: 'space-around',
     alignItems: 'center',
-  },
-  button: {
-    color: 'white',
-  },
-  icon: {
-    height: '8vw',
-    width: '8vw',
   },
 } as const;

@@ -23,7 +23,8 @@
   },
   "include": [
     "src",
-    "components/Mobile.tsx"
+    "components",
+    ".d.ts",
   ],
   "exclude": [
     "node_modules"

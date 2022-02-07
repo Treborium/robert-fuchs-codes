@@ -1,19 +1,17 @@
 import React from 'react';
-import {
-  IconButton,
-  Menu,
-  MenuItem,
-} from '@mui/material';
+import { IconButton, Menu, MenuItem } from '@mui/material';
 
 import { theme } from './Theme';
 import { Menu as MenuIcon } from 'react-feather';
 
 export default function Navigation() {
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] =  React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
+
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(e.currentTarget);
   };
+
   const handleClose = () => {
     setAnchorEl(null);
   };

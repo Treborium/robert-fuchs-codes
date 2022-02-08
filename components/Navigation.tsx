@@ -1,7 +1,6 @@
 import React from 'react';
 import { IconButton, Menu, MenuItem } from '@mui/material';
 
-import { theme } from './Theme';
 import { Menu as MenuIcon } from 'react-feather';
 
 export default function Navigation() {
@@ -26,6 +25,7 @@ export default function Navigation() {
         onClick={handleClick}
         sx={styles.menu}
         size='large'
+        color='primary'
       >
         <MenuIcon size='50px' />
       </IconButton>
@@ -57,6 +57,5 @@ const styles = {
     position: 'absolute',
     right: '50px',
     top: '50px',
-    color: theme.fontColor,
   },
 } as const;

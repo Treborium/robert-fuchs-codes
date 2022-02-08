@@ -57,7 +57,7 @@ export const Resume: React.FC<{}> = () => {
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Close</Button>
+          <Button onClick={handleClose} color='secondary'>Close</Button>
         </DialogActions>
       </Dialog>
     </>

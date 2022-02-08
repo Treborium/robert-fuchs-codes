@@ -5,7 +5,6 @@ import {
   Dialog,
   DialogTitle,
   DialogContent,
-  DialogContentText,
   DialogActions,
   Slide,
 } from '@mui/material';
@@ -48,7 +47,6 @@ export const Skills: React.FC<{}> = () => {
         TransitionComponent={Transition}
         keepMounted
         onClose={handleClose}
-        aria-describedby='slide-in-dialog-for-skills'
         maxWidth='md'
         fullWidth
       >
@@ -66,7 +64,7 @@ export const Skills: React.FC<{}> = () => {
           <Skill label='C++' value={60} {...styles.skill} />
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Close</Button>
+          <Button onClick={handleClose} color='secondary'>Close</Button>
         </DialogActions>
       </Dialog>
     </>

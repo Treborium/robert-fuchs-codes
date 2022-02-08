@@ -9,7 +9,6 @@ import {
 import { linearProgressClasses } from '@mui/material/LinearProgress';
 import { styled } from '@mui/material/styles';
 
-import { theme } from './Theme';
 import useAnimation from '../hooks/useAnimation';
 
 export interface Props extends BoxProps {
@@ -39,7 +38,6 @@ const styles = {
   label: {
     fontSize: '1.5rem',
     marginBottom: '10px',
-    fontFamily: theme.fontFamilySerif,
   },
 } as const;
 

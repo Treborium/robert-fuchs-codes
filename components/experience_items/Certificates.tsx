@@ -60,6 +60,7 @@ export const Certficates: React.FC<{}> = () => {
             target='_blank'
             rel='noopener'
             aria-label='verify AWS certified developer badge'
+            color='secondary'
           >
             <Image src={AWSCertifiedDeveloperAssociateBadge}/>
           </Button>
@@ -67,7 +68,7 @@ export const Certficates: React.FC<{}> = () => {
           <Typography align='center'>Expires on February 05, 2025</Typography>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Close</Button>
+          <Button onClick={handleClose} color='secondary'>Close</Button>
         </DialogActions>
       </Dialog>
     </>

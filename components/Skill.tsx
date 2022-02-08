@@ -21,7 +21,7 @@ export default function Skill({ label, value, ...rest }: Props) {
   const progress = useAnimation(value, 1500, 10);
 
   return (
-    <Box {...rest}>
+    <Box sx={styles.container} {...rest}>
       <Typography sx={styles.label} gutterBottom={false}>
         {label}
       </Typography>
@@ -33,9 +33,12 @@ export default function Skill({ label, value, ...rest }: Props) {
 }
 
 const styles = {
+  container: {
+    width: '40vw',
+  },
   label: {
     fontSize: '1.5rem',
-    marginBottom: '15px',
+    marginBottom: '10px',
     fontFamily: theme.fontFamilySerif,
   },
 } as const;
@@ -48,6 +51,6 @@ const CustomLinearProgress = styled(LinearProgress)(() => ({
   },
   [`& .${linearProgressClasses.bar}`]: {
     borderRadius: 5,
-    backgroundColor: theme.fontColor,
+    backgroundColor: '#000000',
   },
 }));

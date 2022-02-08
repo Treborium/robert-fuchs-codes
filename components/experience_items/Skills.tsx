@@ -12,8 +12,8 @@ import {
 import { TransitionProps } from '@mui/material/transitions';
 import { CodeTags } from 'mdi-material-ui';
 import { forwardRef, useState } from 'react';
+import Skill from '../Skill';
 import { ExperienceItemsStyles } from './styles';
-
 
 const Transition = forwardRef(function Transition(
   props: TransitionProps & {
@@ -48,14 +48,22 @@ export const Skills: React.FC<{}> = () => {
         TransitionComponent={Transition}
         keepMounted
         onClose={handleClose}
-        aria-describedby='alert-dialog-slide-description'
+        aria-describedby='slide-in-dialog-for-skills'
+        maxWidth='md'
+        fullWidth
       >
         <DialogTitle>Skills</DialogTitle>
-        <DialogContent>
-          <DialogContentText id='alert-dialog-slide-description'>
-            Let Google help apps determine location. This means sending
-            anonymous location data to Google, even when no apps are running.
-          </DialogContentText>
+        <DialogContent sx={styles.content}>
+          <Skill label='NodeJs' value={100} {...styles.skill} />
+          <Skill label='TypeScript' value={100} {...styles.skill} />
+          <Skill label='React' value={90} {...styles.skill} />
+          <Skill label='AWS' value={70} {...styles.skill} />
+          <Skill label='Python' value={80} {...styles.skill} />
+          <Skill label='Java' value={90} {...styles.skill} />
+          <Skill label='React Native' value={60} {...styles.skill} />
+          <Skill label='Git' value={100} {...styles.skill} />
+          <Skill label='Bash' value={80} {...styles.skill} />
+          <Skill label='C++' value={60} {...styles.skill} />
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Close</Button>
@@ -65,4 +73,11 @@ export const Skills: React.FC<{}> = () => {
   );
 };
 
-
+const styles = {
+  content: {
+    padding: '5vh 5vw',
+  },
+  skill: {
+    marginBottom: '2vh',
+  },
+};

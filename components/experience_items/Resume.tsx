@@ -5,13 +5,15 @@ import {
   Dialog,
   DialogTitle,
   DialogContent,
-  DialogContentText,
   DialogActions,
   Slide,
+  SvgIcon,
 } from '@mui/material';
 import { TransitionProps } from '@mui/material/transitions';
-import { SourceBranch } from 'mdi-material-ui';
+import { Numeric1Circle, Numeric2Circle, School, SourceBranch } from 'mdi-material-ui';
 import { forwardRef, useState } from 'react';
+import { Chrono } from 'react-chrono';
+import { TimelineItemModel } from 'react-chrono/dist/models/TimelineItemModel';
 import { ExperienceItemsStyles } from './styles';
 
 const Transition = forwardRef(function Transition(
@@ -34,6 +36,30 @@ export const Resume: React.FC<{}> = () => {
     setOpen(false);
   };
 
+  const items: TimelineItemModel[] = [
+    {
+      title: 'March 2022 - Present',
+      cardTitle: 'Futurice',
+      cardDetailedText: ['Senior Full Stack Engineer (March 2022 - Present)'],
+    },
+    {
+      title: 'March 2017 - March 2022',
+      cardTitle: 'GoTo Technologies (former LogMeIn)',
+      cardDetailedText: [
+        'Software Engineer (Aug 2020 - March 2022)',
+        'Working Student (Aug 2017 - Aug 2020)',
+        'Intern (March 2017 - Aug 2017)',
+      ],
+    },
+    {
+      title: 'Sep 2016 - Jul 2020',
+      cardTitle: 'Karlsruhe University of Applied Science',
+      cardDetailedText: [
+        'Bachelor of Applied Science – BASc, Computer Science',
+      ],
+    },
+  ];
+
   return (
     <>
       <Button sx={ExperienceItemsStyles.button} onClick={handleClickOpen}>
@@ -51,13 +77,26 @@ export const Resume: React.FC<{}> = () => {
       >
         <DialogTitle>Resume</DialogTitle>
         <DialogContent>
-          <DialogContentText id='alert-dialog-slide-description'>
-            Let Google help apps determine location. This means sending
-            anonymous location data to Google, even when no apps are running.
-          </DialogContentText>
+          <Chrono
+            items={items}
+            mode='VERTICAL_ALTERNATING'
+            cardWidth={400}
+            useReadMore={false}
+            hideControls
+            disableClickOnCircle
+            theme={{ primary: 'black', secondary: '', titleColor: 'black' }}
+          >
+            <div className='chrono-icons'>
+              <Numeric2Circle />
+              <Numeric1Circle />
+              <School />
+            </div>
+          </Chrono>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} color='secondary'>Close</Button>
+          <Button onClick={handleClose} color='secondary'>
+            Close
+          </Button>
         </DialogActions>
       </Dialog>
     </>

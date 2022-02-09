@@ -1,40 +1,25 @@
 import {
+  LinkBox,
   Box,
-  Button,
-  Typography,
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogActions,
-  Slide,
-  SvgIcon,
-} from '@mui/material';
-import { TransitionProps } from '@mui/material/transitions';
-import { Numeric1Circle, Numeric2Circle, School, SourceBranch } from 'mdi-material-ui';
-import { forwardRef, useState } from 'react';
+  Text,
+  Icon,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalHeader,
+  ModalOverlay,
+  useDisclosure,
+} from '@chakra-ui/react';
 import { Chrono } from 'react-chrono';
 import { TimelineItemModel } from 'react-chrono/dist/models/TimelineItemModel';
-import { ExperienceItemsStyles } from './styles';
+import { DiGitBranch } from 'react-icons/di';
+import { IoMdSchool } from 'react-icons/io';
+import { RiNumber1, RiNumber2 } from 'react-icons/ri';
 
-const Transition = forwardRef(function Transition(
-  props: TransitionProps & {
-    children?: React.ReactElement<any, any>;
-  },
-  ref: React.Ref<unknown>
-) {
-  return <Slide direction='left' ref={ref} {...props} />;
-});
 
 export const Resume: React.FC<{}> = () => {
-  const [open, setOpen] = useState(false);
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   const items: TimelineItemModel[] = [
     {
@@ -62,43 +47,42 @@ export const Resume: React.FC<{}> = () => {
 
   return (
     <>
-      <Button sx={ExperienceItemsStyles.button} onClick={handleClickOpen}>
+      <LinkBox as='button' onClick={onOpen}>
         <Box>
-          <SourceBranch sx={ExperienceItemsStyles.icon} />
-          <Typography align='center'>Resume</Typography>
+          <Icon
+            as={DiGitBranch}
+            width={['5vw']}
+            height={['5vw']}
+            color='white'
+          />
+          <Text color='white'>Resume</Text>
         </Box>
-      </Button>
-      <Dialog
-        open={open}
-        TransitionComponent={Transition}
-        keepMounted
-        onClose={handleClose}
-        aria-describedby='alert-dialog-slide-description'
-      >
-        <DialogTitle>Resume</DialogTitle>
-        <DialogContent>
-          <Chrono
-            items={items}
-            mode='VERTICAL_ALTERNATING'
-            cardWidth={400}
-            useReadMore={false}
-            hideControls
-            disableClickOnCircle
-            theme={{ primary: 'black', secondary: '', titleColor: 'black' }}
-          >
-            <div className='chrono-icons'>
-              <Numeric2Circle />
-              <Numeric1Circle />
-              <School />
-            </div>
-          </Chrono>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose} color='secondary'>
-            Close
-          </Button>
-        </DialogActions>
-      </Dialog>
+      </LinkBox>
+
+      <Modal isOpen={isOpen} onClose={onClose} size='xl'>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Certificates</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <Chrono
+              items={items}
+              mode='VERTICAL_ALTERNATING'
+              cardWidth={400}
+              useReadMore={false}
+              hideControls
+              disableClickOnCircle
+              theme={{ primary: 'black', secondary: '', titleColor: 'black' }}
+            >
+              <div className='chrono-icons'>
+                <Icon as={RiNumber2} />
+                <Icon as={RiNumber1} />
+                <Icon as={IoMdSchool} />
+              </div>
+            </Chrono>
+          </ModalBody>
+        </ModalContent>
+      </Modal>
     </>
   );
 };

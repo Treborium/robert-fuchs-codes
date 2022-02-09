@@ -1,85 +1,54 @@
-import { forwardRef, useState } from 'react';
-import {
-  Box,
-  Button,
-  Typography,
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogActions,
-  Slide,
-} from '@mui/material';
-import { TransitionProps } from '@mui/material/transitions';
-import { CertificateOutline } from 'mdi-material-ui';
 import Image from 'next/image';
 
-import { ExperienceItemsStyles } from './styles';
-
 import AWSCertifiedDeveloperAssociateBadge from '../../public/aws-certified-developer-associate.png';
-
-const Transition = forwardRef(function Transition(
-  props: TransitionProps & {
-    children?: React.ReactElement<any, any>;
-  },
-  ref: React.Ref<unknown>
-) {
-  return <Slide direction='up' ref={ref} {...props} />;
-});
+import {
+  LinkBox,
+  Box,
+  Text,
+  Icon,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalHeader,
+  ModalOverlay,
+  useDisclosure,
+} from '@chakra-ui/react';
+import { FaCertificate } from 'react-icons/fa';
 
 export const Certficates: React.FC<{}> = () => {
-  const [open, setOpen] = useState(false);
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <>
-      <Button sx={ExperienceItemsStyles.button} onClick={handleClickOpen}>
+      <LinkBox as='button' onClick={onOpen}>
         <Box>
-          <CertificateOutline sx={ExperienceItemsStyles.icon} />
-          <Typography align='center'>Certificates</Typography>
+          <Icon
+            as={FaCertificate}
+            width={['5vw']}
+            height={['5vw']}
+            color='white'
+          />
+          <Text color='white'>Certificates</Text>
         </Box>
-      </Button>
-      <Dialog
-        open={open}
-        TransitionComponent={Transition}
-        keepMounted
-        onClose={handleClose}
-        aria-describedby='alert-dialog-slide-description'
-      >
-        <DialogTitle>Certificates</DialogTitle>
-        <DialogContent>
-          <Button
-            href='https://www.credly.com/badges/569d3eae-63df-4623-bd5f-715d95002ee2/public_url'
-            component='a'
-            target='_blank'
-            rel='noopener'
-            aria-label='verify AWS certified developer badge'
-            color='secondary'
-            sx={styles.certificate}
-          >
-            <Image src={AWSCertifiedDeveloperAssociateBadge} />
-          </Button>
-          <Typography align='center'>Issued on February 05, 2022</Typography>
-          <Typography align='center'>Expires on February 05, 2025</Typography>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose} color='secondary'>
-            Close
-          </Button>
-        </DialogActions>
-      </Dialog>
+      </LinkBox>
+      <Modal isOpen={isOpen} onClose={onClose} size='md'>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Certificates</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <Box display='flex' flexDirection='column' justifyContent='center'>
+              <Image
+                src={AWSCertifiedDeveloperAssociateBadge}
+                objectFit='contain'
+              />
+              <Text align='center'>Issued on February 05, 2022</Text>
+              <Text align='center'>Expires on February 05, 2025</Text>
+            </Box>
+          </ModalBody>
+        </ModalContent>
+      </Modal>
     </>
   );
 };
-
-const styles = {
-  certificate: {
-    marginBottom: '2vh',
-  },
-} as const;

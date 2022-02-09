@@ -1,6 +1,6 @@
-import { Typography } from '@mui/material';
 import React from 'react';
+import { Text } from '@chakra-ui/react';
 
 export default function Contact() {
-  return <Typography>Contact</Typography>
+  return <Text>Contact</Text>;
 }

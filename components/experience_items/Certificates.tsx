@@ -61,16 +61,25 @@ export const Certficates: React.FC<{}> = () => {
             rel='noopener'
             aria-label='verify AWS certified developer badge'
             color='secondary'
+            sx={styles.certificate}
           >
-            <Image src={AWSCertifiedDeveloperAssociateBadge}/>
+            <Image src={AWSCertifiedDeveloperAssociateBadge} />
           </Button>
           <Typography align='center'>Issued on February 05, 2022</Typography>
           <Typography align='center'>Expires on February 05, 2025</Typography>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} color='secondary'>Close</Button>
+          <Button onClick={handleClose} color='secondary'>
+            Close
+          </Button>
         </DialogActions>
       </Dialog>
     </>
   );
 };
+
+const styles = {
+  certificate: {
+    marginBottom: '2vh',
+  },
+} as const;

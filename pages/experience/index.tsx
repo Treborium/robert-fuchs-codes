@@ -1,16 +1,17 @@
 import React from 'react';
-import { Box } from '@mui/material';
 
 import { Skills } from '../../components/experience_items/Skills';
 import { Certficates } from '../../components/experience_items/Certificates';
 import { Resume } from '../../components/experience_items/Resume';
+import { Box, Text } from '@chakra-ui/react';
 
 export default function Experience() {
   return (
     <Box sx={styles.experiences}>
-      <Skills />
+      {/* <Skills />
       <Certficates />
-      <Resume />
+      <Resume /> */}
+      <Text>Skills</Text>
     </Box>
   );
 }

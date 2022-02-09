@@ -1,33 +1,19 @@
-import { Container, createTheme, ThemeProvider } from '@mui/material';
+import { Box, ChakraProvider } from '@chakra-ui/react';
 
 import Navigation from './Navigation';
 
-interface Props {}
 
-export const Layout: React.FC<Props> = ({ children }) => {
+export const Layout: React.FC<{}> = ({ children }) => {
   return (
-    <ThemeProvider theme={CustomTheme}>
+    <ChakraProvider>
       <Navigation />
-      <Container disableGutters maxWidth={false} sx={styles.container}>
+      <Box width='100vw' height='100vh' backgroundColor='black'>
         {children}
-      </Container>
-    </ThemeProvider>
+      </Box>
+    </ChakraProvider>
   );
 };
 
-export const CustomTheme = createTheme({
-  palette: {
-    primary: {
-      main: '#FFFFFF',
-    },
-    secondary: {
-      main: '#000000',
-    },
-    action: {
-      hoverOpacity: 0.1,
-    },
-  },
-});
 
 const styles = {
   container: {

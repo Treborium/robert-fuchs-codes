@@ -1,61 +1,39 @@
 import React from 'react';
-import { IconButton, Menu, MenuItem } from '@mui/material';
 
 import { Menu as MenuIcon } from 'react-feather';
+import {
+  IconButton,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  Link,
+} from '@chakra-ui/react';
 
 export default function Navigation() {
-  const [anchorEl, setAnchorEl] =  React.useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
-
-  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl(e.currentTarget);
-  };
-
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-
   return (
-    <div>
-      <IconButton
-        id='basic-button'
-        aria-controls={open ? 'basic-menu' : undefined}
-        aria-haspopup='true'
-        aria-expanded={open ? 'true' : undefined}
-        onClick={handleClick}
-        sx={styles.menu}
-        size='large'
-        color='primary'
-      >
-        <MenuIcon size='50px' />
-      </IconButton>
-      <Menu
-        id='basic-menu'
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        MenuListProps={{
-          'aria-labelledby': 'basic-button',
-        }}
-      >
-        <MenuItem onClick={handleClose} href='/home' component='a'>
-          Home
+    <Menu>
+      <MenuButton
+        as={IconButton}
+        aria-label='Options'
+        icon={<MenuIcon width='2.5rem' height='2.5rem'/>}
+        variant='none'
+        color='white'
+        position='absolute'
+        right='2vh'
+        top='2vh'
+      />
+      <MenuList>
+        <MenuItem as='a' href='/home'>
+         Home
         </MenuItem>
-        <MenuItem onClick={handleClose} href='/experience' component='a'>
+        <MenuItem as='a' href='/experience'>
           Experience
         </MenuItem>
-        <MenuItem onClick={handleClose} href='/contact' component='a'>
+        <MenuItem as='a' href='/contact'>
           Contact
         </MenuItem>
-      </Menu>
-    </div>
+      </MenuList>
+    </Menu>
   );
 }
-
-const styles = {
-  menu: {
-    position: 'absolute',
-    right: '50px',
-    top: '50px',
-  },
-} as const;

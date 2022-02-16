@@ -2,10 +2,8 @@ import Image from 'next/image';
 
 import AWSCertifiedDeveloperAssociateBadge from '../../public/aws-certified-developer-associate.png';
 import {
-  LinkBox,
   Box,
   Text,
-  Icon,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -15,23 +13,15 @@ import {
   useDisclosure,
 } from '@chakra-ui/react';
 import { FaCertificate } from 'react-icons/fa';
+import { LabeledIconButton } from './LabeledIconButton';
 
 export const Certficates: React.FC<{}> = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <>
-      <LinkBox as='button' onClick={onOpen}>
-        <Box>
-          <Icon
-            as={FaCertificate}
-            width={['5vw']}
-            height={['5vw']}
-            color='white'
-          />
-          <Text color='white'>Certificates</Text>
-        </Box>
-      </LinkBox>
+      <LabeledIconButton icon={FaCertificate} label='Certificates' onOpen={onOpen} />
+
       <Modal isOpen={isOpen} onClose={onClose} size='md'>
         <ModalOverlay />
         <ModalContent>

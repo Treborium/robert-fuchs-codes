@@ -1,9 +1,15 @@
+const iconSizes = { base: '6rem', md: '8rem', xl: '10rem' };
+
 export const ExperienceItemsStyles = {
-  button: {
-    color: 'white',
-  },
   icon: {
-    height: '8vw',
-    width: '8vw',
+    width: iconSizes,
+    height: iconSizes,
+    color: 'white',
+    marginBottom: {base: '2vh'},
+  },
+  label: {
+    fontSize: {base: '2rem'},
+    color: 'white',
+    textAlign: 'center',
   },
 } as const;

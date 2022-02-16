@@ -1,72 +1,50 @@
+import Image from 'next/image';
+
+import AWSCertifiedDeveloperAssociateBadge from '../../public/aws-certified-developer-associate.png';
 import {
   Box,
-  Button,
-  Typography,
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogActions,
-  Slide,
-} from '@mui/material';
-import { TransitionProps } from '@mui/material/transitions';
-import { CodeTags } from 'mdi-material-ui';
-import { forwardRef, useState } from 'react';
+  Text,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalHeader,
+  ModalOverlay,
+  useDisclosure,
+  Stack,
+} from '@chakra-ui/react';
+import { BiCode } from 'react-icons/bi';
+import { LabeledIconButton } from './LabeledIconButton';
 import Skill from '../Skill';
-import { ExperienceItemsStyles } from './styles';
-
-const Transition = forwardRef(function Transition(
-  props: TransitionProps & {
-    children?: React.ReactElement<any, any>;
-  },
-  ref: React.Ref<unknown>
-) {
-  return <Slide direction='right' ref={ref} {...props} />;
-});
 
 export const Skills: React.FC<{}> = () => {
-  const [open, setOpen] = useState(false);
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <>
-      <Button sx={ExperienceItemsStyles.button} onClick={handleClickOpen}>
-        <Box>
-          <CodeTags sx={ExperienceItemsStyles.icon} />
-          <Typography align='center'>Skills</Typography>
-        </Box>
-      </Button>
-      <Dialog
-        open={open}
-        TransitionComponent={Transition}
-        keepMounted
-        onClose={handleClose}
-        maxWidth='md'
-        fullWidth
-      >
-        <DialogTitle>Skills</DialogTitle>
-        <DialogContent sx={styles.content}>
-          <Skill label='NodeJs' value={100} {...styles.skill} />
-          <Skill label='TypeScript' value={100} {...styles.skill} />
-          <Skill label='React' value={90} {...styles.skill} />
-          <Skill label='AWS' value={70} {...styles.skill} />
-          <Skill label='Python' value={80} {...styles.skill} />
-          <Skill label='Java' value={90} {...styles.skill} />
-          <Skill label='React Native' value={60} {...styles.skill} />
-          <Skill label='Git' value={100} {...styles.skill} />
-          <Skill label='Bash' value={80} {...styles.skill} />
-          <Skill label='C++' value={60} {...styles.skill} />
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose} color='secondary'>Close</Button>
-        </DialogActions>
-      </Dialog>
+      <LabeledIconButton icon={BiCode} label='Skills' onOpen={onOpen} />
+
+      <Modal isOpen={isOpen} onClose={onClose} size='md'>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Certificates</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody paddingX='2vw' paddingY='3vh'>
+            <Stack spacing={5}>
+              <Skill label='NodeJs' value={100} {...styles.skill} />
+              <Skill label='TypeScript' value={100} {...styles.skill} />
+              <Skill label='React' value={90} {...styles.skill} />
+              <Skill label='AWS' value={70} {...styles.skill} />
+              <Skill label='Python' value={80} {...styles.skill} />
+              <Skill label='Java' value={90} {...styles.skill} />
+              <Skill label='React Native' value={60} {...styles.skill} />
+              <Skill label='Git' value={100} {...styles.skill} />
+              <Skill label='Bash' value={80} {...styles.skill} />
+              <Skill label='C++' value={60} {...styles.skill} />
+            </Stack>
+          </ModalBody>
+        </ModalContent>
+      </Modal>
     </>
   );
 };

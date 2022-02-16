@@ -1,7 +1,4 @@
 import {
-  LinkBox,
-  Box,
-  Text,
   Icon,
   Modal,
   ModalBody,
@@ -16,6 +13,7 @@ import { TimelineItemModel } from 'react-chrono/dist/models/TimelineItemModel';
 import { DiGitBranch } from 'react-icons/di';
 import { IoMdSchool } from 'react-icons/io';
 import { RiNumber1, RiNumber2 } from 'react-icons/ri';
+import { LabeledIconButton } from './LabeledIconButton';
 
 
 export const Resume: React.FC<{}> = () => {
@@ -47,17 +45,7 @@ export const Resume: React.FC<{}> = () => {
 
   return (
     <>
-      <LinkBox as='button' onClick={onOpen}>
-        <Box>
-          <Icon
-            as={DiGitBranch}
-            width={['5vw']}
-            height={['5vw']}
-            color='white'
-          />
-          <Text color='white'>Resume</Text>
-        </Box>
-      </LinkBox>
+      <LabeledIconButton icon={DiGitBranch} label='Resume' onOpen={onOpen} />
 
       <Modal isOpen={isOpen} onClose={onClose} size='xl'>
         <ModalOverlay />

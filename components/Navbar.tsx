@@ -6,6 +6,9 @@ export const Navbar: React.FC<{}> = () => {
   const router = useRouter();
   const [activePage, setActivePage] = useState('/');
 
+  const getStyleDependingOnNavigationState = (route: string) =>
+    activePage === route ? 'underline' : 'none';
+
   useEffect(() => {
     console.log('updating active page to:', router.route);
     setActivePage(router.route);
@@ -36,7 +39,7 @@ export const Navbar: React.FC<{}> = () => {
         <Link href='/'>
           <a
             style={{
-              textDecoration: activePage === '/' ? 'underline' : 'none',
+              textDecoration: getStyleDependingOnNavigationState('/'),
             }}
           >
             Home
@@ -45,7 +48,7 @@ export const Navbar: React.FC<{}> = () => {
         <Link href='/about'>
           <a
             style={{
-              textDecoration: activePage === '/about' ? 'underline' : 'none',
+              textDecoration: getStyleDependingOnNavigationState('/about'),
             }}
           >
             About
@@ -54,7 +57,7 @@ export const Navbar: React.FC<{}> = () => {
         <Link href='/contact'>
           <a
             style={{
-              textDecoration: activePage === '/contact' ? 'underline' : 'none',
+              textDecoration: getStyleDependingOnNavigationState('/contact'),
             }}
           >
             Contact

@@ -2,15 +2,15 @@ import { ReactElement } from 'react';
 import { Navbar } from '../components/Navbar';
 import { NextPageWithLayout } from './_app';
 
-const Home: NextPageWithLayout = () => {
+const Contact: NextPageWithLayout = () => {
   return (
     <div>
-      <h1>Hi 👋</h1>
+      <h1>Get in contact</h1>
     </div>
   );
 };
 
-Home.getLayout = (page: ReactElement) => {
+Contact.getLayout = (page: ReactElement) => {
   return (
     <>
       <Navbar />
@@ -19,4 +19,4 @@ Home.getLayout = (page: ReactElement) => {
   );
 };
 
-export default Home;
+export default Contact;

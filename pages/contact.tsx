@@ -5,7 +5,9 @@ import { NextPageWithLayout } from './_app';
 const Contact: NextPageWithLayout = () => {
   return (
     <div>
-      <h1>Get in contact</h1>
+      {Array.from(Array(100).keys()).map((_, index) => (
+        <h1 key={index}>Contact</h1>
+      ))}
     </div>
   );
 };

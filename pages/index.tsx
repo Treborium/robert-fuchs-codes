@@ -5,7 +5,9 @@ import { NextPageWithLayout } from './_app';
 const Home: NextPageWithLayout = () => {
   return (
     <div>
-      <h1>Hi 👋</h1>
+      {Array.from(Array(100).keys()).map((_, index) => (
+        <h1 key={index}>Hi 👋</h1>
+      ))}
     </div>
   );
 };

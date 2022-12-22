@@ -108,3 +108,7 @@ dist
 
 # Next.js
 .next
+
+compiled/
+**/*.css
+**/*.css.map
